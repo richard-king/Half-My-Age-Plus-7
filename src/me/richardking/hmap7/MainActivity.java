@@ -3,7 +3,6 @@ package me.richardking.hmap7;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Window;
-import android.view.WindowManager;
 
 public class MainActivity extends Activity
 {
