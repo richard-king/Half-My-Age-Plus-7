@@ -16,7 +16,7 @@ public class SplashActivity extends Activity
 {
 	
 	protected boolean _active = true; // Whether or not we're at 1st load, which we will be initially. Also, tautologies are tautologous...
-	protected int _splashTime = 2500; // The length of time, in milliseconds, to display the splash screen.
+	protected final int SPLASH_TIME = 1000; // The length of time, in milliseconds, to display the splash screen.
 	
     /** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -42,11 +42,11 @@ public class SplashActivity extends Activity
                 try // needed for the sleep(Integer) function.
                 {
                 	int waited = 0; // We haven't waited at all up to this point
-                    while(_active && (waited < _splashTime)) // keep going so long as we haven't waited _splashTime ms or more...
+                    while(_active && (waited < SPLASH_TIME)) // keep going so long as we haven't waited _splashTime ms or more...
                     {
                     	sleep(100); // Pause for 100ms
                         waited += 100; // We have waited (another)? 100ms
-                        _active = (waited < _splashTime); // Finished our first load stuff
+                        _active = (waited < SPLASH_TIME); // Finished our first load stuff
                     }
                 }
                 catch(InterruptedException e)
