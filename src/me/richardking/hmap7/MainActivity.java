@@ -35,7 +35,7 @@ public class MainActivity extends Activity
 	            {
 	            	String s = _input.getText().toString(); // Grab the input.
 	            	
-	            	if(s == "")
+	            	if(s.equals(""))
 	            	{
 	            		// Make sure they enter _SOME_ data.
 	            		Toast toast;
