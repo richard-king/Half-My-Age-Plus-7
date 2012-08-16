@@ -4,5 +4,6 @@
     <string name="hello">Hello World, SplashActivity!</string>
     <string name="app_name">Half My Age Plus 7</string>
     <string name="go_button">Calculate My Range!</string>
+    <string name="result">Your range is: </string>
 
 </resources>

@@ -1,13 +1,14 @@
 package me.richardking.hmap7;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 public class MainActivity extends Activity
 {
@@ -38,9 +39,19 @@ public class MainActivity extends Activity
 	            	if(s.equals(""))
 	            	{
 	            		// Make sure they enter _SOME_ data.
-	            		Toast toast;
-	            		toast = Toast.makeText(getApplicationContext(), "Hold on! You have to enter your age first!", Toast.LENGTH_SHORT);
-	            		toast.show();
+	            		
+	            		AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+	        			alertDialog.setMessage("Hold on a sec there, tiger! You're gonna need to enter your age first!");
+
+	        			alertDialog.setButton("Got it!", new DialogInterface.OnClickListener()
+	        			{
+	        	           public void onClick(DialogInterface dialog, int which)
+	        	           {
+	        	              // nothing
+	        	           }
+	        	        });
+	        			
+	        			alertDialog.show();
 	            	}
 	            	else
 	            	{
@@ -49,16 +60,26 @@ public class MainActivity extends Activity
 		            	if( age < 18 )
 		            	{
 		            		// Generate a warning if the user is under 18.
-		            		Toast toast;
-		            		toast = Toast.makeText(getApplicationContext(), "You're a little young for this...", Toast.LENGTH_SHORT);
-		            		toast.show();
+		            		AlertDialog alertDialog = new AlertDialog.Builder(MainActivity.this).create();
+		        			alertDialog.setMessage("You're a bit young for this game, no?");
+
+		        			alertDialog.setButton("I guess...", new DialogInterface.OnClickListener()
+		        			{
+		        	           public void onClick(DialogInterface dialog, int which)
+		        	           {
+		        	              // nothing
+		        	           }
+		        	        });
+		        			
+		        			alertDialog.show();
 		            	}
 		            	else
 		            	{
 		            		// Proof of concept more than anything else.
-		            		Toast toast;
-		            		toast = Toast.makeText(getApplicationContext(), calculateLower(age) + "-" + calculateUpper(age), Toast.LENGTH_SHORT);
-		            		toast.show();
+		            		Intent i = new Intent("me.richardking.hmap7.ResultActivity");
+		            		i.putExtra("minimum", calculateLower(age));
+		            		i.putExtra("maximum", calculateUpper(age));
+		            		startActivity(i);
 		            	}
 	            	}
 	            }
