@@ -36,7 +36,7 @@ public class ResultActivity extends Activity {
         _tv2.setText(minimum);
         _tv4.setText(maximum);
         
-        _header = (TextView) findViewById(R.id.maintitle);
+        _header = (TextView) findViewById(R.id.maintitle2);
         
         Typeface unicorn = Typeface.createFromAsset(getAssets(), "fonts/UNICORN.TTF");
         _header.setTypeface(unicorn);

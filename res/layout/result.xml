@@ -4,14 +4,14 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 		<LinearLayout
-			android:id="@+id/topcontrolbar"
+			android:id="@+id/topcontrolbar2"
 			android:layout_width="fill_parent"
 			android:layout_height="50dip"
 			android:layout_alignParentTop="true"
 			android:background="@drawable/main_header_selector"
 			>
 			   <TextView
-				android:id="@+id/maintitle"
+				android:id="@+id/maintitle2"
 			   	android:text="@string/app_name"
 			   	android:layout_width="wrap_content"
 			   	android:layout_height="wrap_content"
@@ -27,11 +27,11 @@
 		<ScrollView android:id="@+id/ScrollView02"
 			android:layout_width="fill_parent"
 			android:layout_height="fill_parent"
-			android:layout_below="@id/topcontrolbar"
+			android:layout_below="@id/topcontrolbar2"
 			android:background="@color/white" >
 			   
 			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			    android:id="@+id/bodylayout"
+			    android:id="@+id/bodylayout2"
 			    android:layout_width="fill_parent"
 			    android:layout_height="wrap_content"
 			    android:orientation="vertical"
@@ -46,7 +46,7 @@
 			        android:layout_gravity="center"
 			        android:gravity="center"/>
 			    
-			    <TextText
+			    <TextView
 			        android:id="@+id/lower_val"
 			        android:layout_width="150dp"
 			        android:layout_height="wrap_content"      
@@ -63,7 +63,7 @@
 			        android:layout_gravity="center"
 			        android:gravity="center"/>
 			    
-			    <TextText
+			    <TextView
 			        android:id="@+id/upper_val"
 			        android:layout_width="150dp"
 			        android:layout_height="wrap_content"      
