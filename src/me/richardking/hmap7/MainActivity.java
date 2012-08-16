@@ -4,17 +4,21 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
-import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class MainActivity extends Activity
 {
 
-	private Button _actionButton;
+	private TextView _actionButton;
+	private TextView _enter;
 	private EditText _input;
+	private TextView _header;
 	
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -26,8 +30,28 @@ public class MainActivity extends Activity
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
         
-        _actionButton = (Button) findViewById(R.id.button1);
+        _actionButton = (TextView) findViewById(R.id.button1);
         _input = (EditText) findViewById(R.id.editText1);
+        _header = (TextView) findViewById(R.id.maintitle);
+        _enter = (TextView) findViewById(R.id.tv1);
+        
+        Typeface unicorn = Typeface.createFromAsset(getAssets(), "fonts/UNICORN.TTF");
+        _header.setTypeface(unicorn);
+        _header.setTextColor(Color.WHITE);
+        _header.setTextSize(30.0f);
+        
+        _input.setText("18");
+        _input.setTypeface(unicorn);
+        _input.setTextSize(100.0f);
+        _input.setTextColor(Color.parseColor("#8C006C"));
+        
+        _enter.setTypeface(unicorn);
+        _enter.setTextSize(25.0f);
+        _enter.setTextColor(Color.parseColor("#8C006C"));
+        
+        _actionButton.setTypeface(unicorn);
+        _actionButton.setTextSize(35.0f);
+        _actionButton.setTextColor(Color.WHITE);
         
         _actionButton.setOnClickListener(
         	new View.OnClickListener()
