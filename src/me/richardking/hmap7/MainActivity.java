@@ -1,3 +1,11 @@
+/*
+ * MainActivity.java
+ * Created by: Richard King (richard@richardking.me)
+ * Created on: August 16th, 2012
+ * Last edited: August 17th, 2012
+ * Last edited by: Richard King (richard@richardking.me)
+ */
+
 package me.richardking.hmap7;
 
 import android.app.Activity;

@@ -1,3 +1,11 @@
+/*
+ * ResultActivity.java
+ * Created by: Richard King (richard@richardking.me)
+ * Created on: August 16th, 2012
+ * Last edited: August 17th, 2012
+ * Last edited by: Richard King (richard@richardking.me)
+ */
+
 package me.richardking.hmap7;
 
 import android.app.Activity;
@@ -18,6 +26,7 @@ public class ResultActivity extends Activity {
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
     {
+    	// Scrap the title bar.
     	this.requestWindowFeature(Window.FEATURE_NO_TITLE);
     	
     	super.onCreate(savedInstanceState);
@@ -28,16 +37,19 @@ public class ResultActivity extends Activity {
         _tv3 = (TextView) findViewById(R.id.upper_limit);
         _tv4 = (TextView) findViewById(R.id.upper_val);
         
+        // Reclaim the variables passed to this Activity
         Bundle extras = getIntent().getExtras();
         
         String minimum = Integer.toString(extras.getInt("minimum"));
         String maximum = Integer.toString(extras.getInt("maximum"));
         
+        // Set the values to their correct places
         _tv2.setText(minimum);
         _tv4.setText(maximum);
         
         _header = (TextView) findViewById(R.id.maintitle2);
         
+        // Bring in the external font & set fonts/colours sizes.
         Typeface unicorn = Typeface.createFromAsset(getAssets(), "fonts/UNICORN.TTF");
         _header.setTypeface(unicorn);
         _header.setTextColor(Color.WHITE);
