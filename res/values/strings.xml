@@ -7,7 +7,7 @@
     <string name="lower">Your lower limit is:</string>
     <string name="upper">Your upper limit is:</string>
     <string name="enter_age">Enter your age:</string>
-    
+
     <color name="white">#FFFFFF</color>
     <color name="lightpurple">#8C006C</color>
     <color name="darkpurple">#4F003A</color>
