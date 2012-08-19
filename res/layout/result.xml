@@ -3,83 +3,83 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-		<LinearLayout
-			android:id="@+id/topcontrolbar2"
-			android:layout_width="fill_parent"
-			android:layout_height="50dip"
-			android:layout_alignParentTop="true"
-			android:background="@drawable/main_header_selector"
-			>
-			   <TextView
-				android:id="@+id/maintitle2"
-			   	android:text="@string/app_name"
-			   	android:layout_width="wrap_content"
-			   	android:layout_height="wrap_content"
-			   	android:layout_marginTop="8dp"
-			   	android:layout_marginLeft="8dp"
-			   	android:shadowColor="#000000"
-			   	android:shadowDx="1"			   	
-			   	android:shadowDy="1"
-			   	android:shadowRadius="2"
-			   />
-		</LinearLayout>
-    
-		<ScrollView android:id="@+id/ScrollView02"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:layout_below="@id/topcontrolbar2"
-			android:background="@color/white" >
-			   
-			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			    android:id="@+id/bodylayout2"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:orientation="vertical"
-			    android:background="@color/white" >
-			
-			    <TextView
-			        android:id="@+id/lower_limit"
-			        android:layout_width="250dp"
-			        android:layout_height="wrap_content"
-			        android:text="@string/lower"		        
-				   	android:layout_marginTop="50dp"
-			        android:layout_gravity="center"
-			        android:gravity="center"/>
-			    
-			    <TextView
-			        android:id="@+id/lower_val"
-			        android:layout_width="150dp"
-			        android:layout_height="wrap_content"      
-				   	android:layout_marginTop="15dp"
-				   	android:layout_gravity="center"
-				   	android:gravity="center" />
-			    
-			    <View 
-				   	android:layout_width="256dp"
-				   	android:layout_height="1dp"      
-				   	android:layout_marginTop="15dp"
-					android:layout_gravity="center"      
-				   	android:background="@color/lightpurple"/>
-			    
-			    
-			    <TextView
-			        android:id="@+id/upper_limit"
-			        android:layout_width="250dp"
-			        android:layout_height="wrap_content"
-			        android:text="@string/upper"		        
-				   	android:layout_marginTop="35dp"
-			        android:layout_gravity="center"
-			        android:gravity="center"/>
-			    
-			    <TextView
-			        android:id="@+id/upper_val"
-			        android:layout_width="150dp"
-			        android:layout_height="wrap_content"      
-				   	android:layout_marginTop="15dp"
-				   	android:layout_gravity="center"
-				   	android:gravity="center" />
-			
-			</LinearLayout>
-		</ScrollView>
-		
+
+    <LinearLayout
+        android:id="@+id/topcontrolbar2"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/main_header_selector" >
+
+        <TextView
+            android:id="@+id/maintitle2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/ScrollView02"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/topcontrolbar2"
+        android:background="@color/white" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/bodylayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/lower_limit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:gravity="center"
+                android:text="@string/lower" />
+
+            <TextView
+                android:id="@+id/lower_val"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:gravity="center" />
+
+            <View
+                android:layout_width="256dp"
+                android:layout_height="1dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:background="@color/lightpurple" />
+
+            <TextView
+                android:id="@+id/upper_limit"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="35dp"
+                android:gravity="center"
+                android:text="@string/upper" />
+
+            <TextView
+                android:id="@+id/upper_val"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="15dp"
+                android:gravity="center" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>

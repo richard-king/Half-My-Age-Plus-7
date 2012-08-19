@@ -3,75 +3,76 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" >
-		<LinearLayout
-			android:id="@+id/topcontrolbar"
-			android:layout_width="fill_parent"
-			android:layout_height="50dip"
-			android:layout_alignParentTop="true"
-			android:background="@drawable/main_header_selector"
-			>
-			   <TextView
-				android:id="@+id/maintitle"
-			   	android:text="@string/app_name"
-			   	android:layout_width="wrap_content"
-			   	android:layout_height="wrap_content"
-			   	android:layout_marginTop="8dp"
-			   	android:layout_marginLeft="8dp"
-			   	android:shadowColor="#000000"
-			   	android:shadowDx="1"			   	
-			   	android:shadowDy="1"
-			   	android:shadowRadius="2"
-			   />
-		</LinearLayout>
-    
-		<ScrollView android:id="@+id/ScrollView01"
-			android:layout_width="fill_parent"
-			android:layout_height="fill_parent"
-			android:layout_below="@id/topcontrolbar"
-			android:background="@color/white" >
-			   
-			<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-			    android:id="@+id/bodylayout"
-			    android:layout_width="fill_parent"
-			    android:layout_height="wrap_content"
-			    android:orientation="vertical"
-			    android:background="@color/white" >
-			
-			    <TextView
-			        android:id="@+id/tv1"
-			        android:layout_width="250dp"
-			        android:layout_height="wrap_content"
-			        android:text="@string/enter_age"		        
-				   	android:layout_marginTop="20dp"
-			        android:layout_gravity="center"
-			        android:gravity="center"/>
-			    
-			    <EditText
-			        android:id="@+id/editText1"
-			        android:layout_width="150dp"
-			        android:layout_height="wrap_content"
-			        android:digits="0123456789"
-			        android:maxLength="2"
-			        android:inputType="phone"		        
-				   	android:layout_marginTop="10dp"
-				   	android:layout_gravity="center"
-				   	android:gravity="center"
-					android:background="#00000000" >
-			
-			        <requestFocus />
-			    </EditText>
-			
-			    <TextView
-			        android:id="@+id/button1"
-			        android:layout_width="200dp"
-			        android:layout_height="wrap_content"
-			        android:text="@string/go_button"		        
-				   	android:layout_marginTop="10dp"
-			        android:layout_gravity="center"
-			        android:gravity="center"
-			        android:background="@color/lightpurple" />
-			
-			</LinearLayout>
-		</ScrollView>
-		
+
+    <LinearLayout
+        android:id="@+id/topcontrolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dip"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/main_header_selector" >
+
+        <TextView
+            android:id="@+id/maintitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:shadowColor="#000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="2"
+            android:text="@string/app_name" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/ScrollView01"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@id/topcontrolbar"
+        android:background="@color/white" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/bodylayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/tv1"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:text="@string/enter_age" />
+
+            <EditText
+                android:id="@+id/editText1"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="#00000000"
+                android:digits="0123456789"
+                android:gravity="center"
+                android:inputType="phone"
+                android:maxLength="2" >
+
+                <requestFocus />
+            </EditText>
+
+            <TextView
+                android:id="@+id/button1"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@color/lightpurple"
+                android:gravity="center"
+                android:text="@string/go_button" />
+        </LinearLayout>
+    </ScrollView>
+
 </RelativeLayout>
