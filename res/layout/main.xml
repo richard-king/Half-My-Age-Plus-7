@@ -29,6 +29,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:layout_below="@id/topcontrolbar"
+       	android:layout_marginBottom="50dp"
         android:background="@color/white" >
 
         <LinearLayout
@@ -74,5 +75,12 @@
                 android:text="@string/go_button" />
         </LinearLayout>
     </ScrollView>
+    
+    <LinearLayout
+        android:id="@+id/ad_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+		android:layout_alignParentBottom="true" />
 
 </RelativeLayout>

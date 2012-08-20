@@ -2,7 +2,7 @@
  * MainActivity.java
  * Created by: Richard King (richard@richardking.me)
  * Created on: August 16th, 2012
- * Last edited: August 17th, 2012
+ * Last edited: August 20th, 2012
  * Last edited by: Richard King (richard@richardking.me)
  */
 
@@ -18,7 +18,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.Window;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.google.ads.*;
 
 public class MainActivity extends Activity
 {
@@ -27,6 +29,8 @@ public class MainActivity extends Activity
 	private TextView _enter;
 	private EditText _input;
 	private TextView _header;
+	private AdView _ad;
+	private final String PUBLISHER_ID = "a150316b6775e11";
 	
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -37,6 +41,12 @@ public class MainActivity extends Activity
     	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        _ad = new AdView(this, AdSize.BANNER, PUBLISHER_ID);
+        
+        LinearLayout layout = (LinearLayout) findViewById(R.id.ad_bar);
+        layout.addView(_ad);
+        _ad.loadAd(new AdRequest());
         
         _actionButton = (TextView) findViewById(R.id.button1);
         _input = (EditText) findViewById(R.id.editText1);
