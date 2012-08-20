@@ -14,6 +14,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 /*
  * Splash screen to run on first launch. Redirects to the main Activity
@@ -25,6 +26,8 @@ public class SplashActivity extends Activity
 	
 	protected boolean _active = true; // Whether or not we're at 1st load, which we will be initially. Also, tautologies are tautologous...
 	protected final int SPLASH_TIME = 1000; // The length of time, in milliseconds, to display the splash screen.
+	private final String ANALYTICS_ACCOUNT_ID = "UA-34204718-1";
+	private GoogleAnalyticsTracker _tracker;
 	
     /** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -36,6 +39,10 @@ public class SplashActivity extends Activity
     	
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash); // Set the layout to the splash one.
+        
+        _tracker = GoogleAnalyticsTracker.getInstance();
+        _tracker.startNewSession(ANALYTICS_ACCOUNT_ID, 10, this);
+        _tracker.trackPageView("/SplashActivity");
         
         
         /*

@@ -32,6 +32,8 @@ public class MainActivity extends Activity
 	private TextView _header;
 	private AdView _ad;
 	private final String PUBLISHER_ID = "a150316b6775e11";
+	private final String ANALYTICS_ACCOUNT_ID = "UA-34204718-1";
+	private GoogleAnalyticsTracker _tracker;
 	
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -42,6 +44,10 @@ public class MainActivity extends Activity
     	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
+        
+        _tracker = GoogleAnalyticsTracker.getInstance();
+        _tracker.startNewSession(ANALYTICS_ACCOUNT_ID, 10, this);
+        _tracker.trackPageView("/MainActivity");
         
         _ad = new AdView(this, AdSize.BANNER, PUBLISHER_ID);
         
@@ -79,6 +85,8 @@ public class MainActivity extends Activity
 				public void onClick(View view)
 	            {
 	            	String s = _input.getText().toString(); // Grab the input.
+	            	
+	            	_tracker.trackEvent("Clicks", "Calculate", "MainActivity", s.equals("") ? -1 : Integer.parseInt(s));
 	            	
 	            	if(s.equals(""))
 	            	{

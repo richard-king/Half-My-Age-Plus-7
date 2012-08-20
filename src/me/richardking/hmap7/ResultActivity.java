@@ -16,6 +16,7 @@ import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.ads.*;
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class ResultActivity extends Activity {
 
@@ -26,6 +27,8 @@ public class ResultActivity extends Activity {
 	private TextView _header;
 	private AdView _ad;
 	private final String PUBLISHER_ID = "a150316b6775e11";
+	private final String ANALYTICS_ACCOUNT_ID = "UA-34204718-1";
+	private GoogleAnalyticsTracker _tracker;
 	
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -35,6 +38,10 @@ public class ResultActivity extends Activity {
     	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        
+        _tracker = GoogleAnalyticsTracker.getInstance();
+        _tracker.startNewSession(ANALYTICS_ACCOUNT_ID, 10, this);
+        _tracker.trackPageView("/ResultActivity");
         
         _ad = new AdView(this, AdSize.BANNER, PUBLISHER_ID);
         
