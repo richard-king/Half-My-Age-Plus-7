@@ -13,7 +13,9 @@ import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import com.google.ads.*;
 
 public class ResultActivity extends Activity {
 
@@ -22,6 +24,8 @@ public class ResultActivity extends Activity {
 	private TextView _tv3;
 	private TextView _tv4;
 	private TextView _header;
+	private AdView _ad;
+	private final String PUBLISHER_ID = "a150316b6775e11";
 	
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
@@ -31,6 +35,12 @@ public class ResultActivity extends Activity {
     	
     	super.onCreate(savedInstanceState);
         setContentView(R.layout.result);
+        
+        _ad = new AdView(this, AdSize.BANNER, PUBLISHER_ID);
+        
+        LinearLayout layout = (LinearLayout) findViewById(R.id.ad_bar2);
+        layout.addView(_ad);
+        _ad.loadAd(new AdRequest());
         
         _tv1 = (TextView) findViewById(R.id.lower_limit);
         _tv2 = (TextView) findViewById(R.id.lower_val);

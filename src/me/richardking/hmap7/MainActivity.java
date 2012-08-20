@@ -21,6 +21,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.ads.*;
+import com.google.android.apps.analytics.GoogleAnalyticsTracker;
 
 public class MainActivity extends Activity
 {
@@ -74,7 +75,8 @@ public class MainActivity extends Activity
         _actionButton.setOnClickListener(
         	new View.OnClickListener()
         	{
-	            public void onClick(View view)
+	            @SuppressWarnings("deprecation")
+				public void onClick(View view)
 	            {
 	            	String s = _input.getText().toString(); // Grab the input.
 	            	
@@ -144,5 +146,15 @@ public class MainActivity extends Activity
     {
     	return 2 * ( myAge - 7 );
     }
+    
+    @Override public void onDestroy()
+    {
+    	if (_ad != null)
+    	{
+    		_ad.destroy();
+    	}
+    	super.onDestroy();
+    }
+
 	
 }
