@@ -10,13 +10,16 @@ package me.richardking.hmap7;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -35,6 +38,20 @@ public class MainActivity extends Activity
 	private final String ANALYTICS_ACCOUNT_ID = "UA-34204718-1";
 	private GoogleAnalyticsTracker _tracker;
 	
+	/* Override the inherited onTouchEvent method so as to hide the soft
+	 * keyboard when no entry field is selected. Actually hides it when the
+	 * entry field loses focus, and automatically, instantaneously reopens
+	 * when the new filed gains focus (i.e. it has the appearance of being
+	 * persistent). 
+	 */
+	
+	@Override public boolean onTouchEvent(MotionEvent event)
+	{
+        InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.hideSoftInputFromWindow(getCurrentFocus().getWindowToken(), 0);
+        return true;
+    }
+
 	/** Called when the activity is first created. */
     @Override public void onCreate(Bundle savedInstanceState)
     {
